@@ -77,8 +77,8 @@ public class FXMLControllerCheckBill implements Initializable {
         courseLab.setText(table.getCourse());
         adultNumLab.setText(String.valueOf(table.getAdultNumber()));
         kidNumLab.setText(String.valueOf(table.getKidNumber()));
-        adultPriceLab.setText(String.valueOf(table.calAdultsPrice()));
-        kidPriceLab.setText(String.valueOf(table.calKidsPrice()));
+        adultPriceLab.setText(String.format("%.2f", table.calAdultsPrice()));
+        kidPriceLab.setText(String.format("%.2f", table.calKidsPrice()));
         // endregion
 
         backBtn.setOnMouseClicked(e -> goBack());
@@ -108,10 +108,10 @@ public class FXMLControllerCheckBill implements Initializable {
             showFineLab.setVisible(false);
             timeLab.setVisible(false);
             totalTimeLab.setVisible(false);
-            showSCLab.setText(String.valueOf(calSC()));
-            showTotalLab.setText(String.valueOf(calFinalPrice()));
+            showSCLab.setText(String.format("%.2f", calSC()));
+            showTotalLab.setText(String.format("%.2f", calFinalPrice()));
         }
-        showSCPerLab.setText(String.valueOf(SettingManager.i().getServiceCharge()));
+        showSCPerLab.setText(SettingManager.i().getServiceCharge() + " %");
         otherFineAmountTxtF.textProperty().addListener(e -> amountChange());
 
         tbLab.setText(Text.TTABLE.get());
@@ -133,11 +133,11 @@ public class FXMLControllerCheckBill implements Initializable {
         overTimeLab.setVisible(true);
         showFineLab.setVisible(true);
         overTimeLab.setText(table.getTxtTime('o'));
-        showFineLab.setText(String.valueOf(table.calExcessFine()));
+        showFineLab.setText(String.format("%.2f", table.calExcessFine()));
         showSCLab.setVisible(true);
-        showSCLab.setText(String.valueOf(calSC()));
+        showSCLab.setText(String.format("%.2f", calSC()));
         showTotalLab.setVisible(true);
-        showTotalLab.setText(String.valueOf(calFinalPrice()));
+        showTotalLab.setText(String.format("%.2f", calFinalPrice()));
         otherFineAmountTxtF.setDisable(false);
         stopNBillBtn.setText(Text.END.get());
         stopNBillBtn.setStyle("-fx-background-color: #00a856");
@@ -170,11 +170,10 @@ public class FXMLControllerCheckBill implements Initializable {
         catch (Exception e) {
             return calSC() + calPrice();
         }
-
     }
 
     private void amountChange() {
-        showTotalLab.setText(String.valueOf(calFinalPrice()));
+        showTotalLab.setText(String.format("%.2f", calFinalPrice()));
     }
 
     private void goBack() {

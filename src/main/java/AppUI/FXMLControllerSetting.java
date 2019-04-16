@@ -228,7 +228,7 @@ public class FXMLControllerSetting implements Initializable {
         else {
             for (Course course : courseList) {
                 course.getCourseTxtF().setStyle(courseBoxStyle + "-fx-background-color: #393939");
-                if (course.getCourseTxtF().getText().isEmpty()) {
+                if (course.getCourseTxtF().getText().isBlank()) {
                     course.getCourseTxtF().setStyle(courseBoxStyle + "-fx-background-color: rgba(198,40,40,0.2)");
                     isReady = false;
                     messageLab.setText(Text.MSG_EMPTY.get());
