@@ -111,7 +111,7 @@ public class SettingManager {
         return PriceMap.get(byteNameConc(name)).getPriceKids();
     }
 
-    public void addPrice(String name, double priceKids, double priceAdult) {
+    public void addPrice(String name, double priceAdult, double priceKids) {
         Price newPrice = new Price(byteName(name), priceKids, priceAdult);
         PriceMap.put(byteNameConc(byteName(newPrice.getName())), newPrice);
         updateFile();
