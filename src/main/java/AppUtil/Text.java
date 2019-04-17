@@ -25,7 +25,7 @@ public enum Text {
     SAVE("บันทึก", "Save"),
     MSG_EMPTY("กรุณากรอกข้อมูลให้ครบ", "Please fill in the information"),
     MSG_NOC("กรุณาระบุประเภทอาหาร", "Please enter course"),
-    MSG_EMPNOC("กรุณากรอกข้อมูล และ ประเภทอาหาร", "Please fill in the information and course"),
+    MSG_MUL("กรุณากรอกข้อมูลให้ถูกต้อง", "Please fill in the correct information"),
     MSG_SUCCESS("บันทึกสำเร็จ", "Save Success"),
     // Table text
     BOOK_REMAIN("เหลืออีก\n%s", "%s\nremaining"),

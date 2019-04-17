@@ -214,11 +214,38 @@ public class FXMLControllerSetting implements Initializable {
                     msgToVisible();
                 }
             }
+            if (Integer.parseInt(thourTxtF.getText()) + Integer.parseInt(tminTxtF.getText()) + Integer.parseInt(tsecTxtF.getText()) < 1) {
+                JFXTextField[] txtFList3 = {thourTxtF, tminTxtF, tsecTxtF};
+                for (JFXTextField txtF : txtFList3) {
+                    txtF.setStyle("-fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
+                    txtF.setStyle("-fx-background-color: rgba(198,40,40,0.2); -fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
+                    isReady = false;
+                    messageLab.setText(Text.MSG_MUL.get());
+                    msgToVisible();
+                }
+            }
+            if (Integer.parseInt(ehourTxtF.getText()) + Integer.parseInt(eminTxtF.getText()) + Integer.parseInt(esecTxtF.getText()) < 1) {
+                JFXTextField[] txtFList4 = {ehourTxtF, eminTxtF, esecTxtF};
+                for (JFXTextField txtF : txtFList4) {
+                    txtF.setStyle("-fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
+                    txtF.setStyle("-fx-background-color: rgba(198,40,40,0.2); -fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
+                    isReady = false;
+                    messageLab.setText(Text.MSG_MUL.get());
+                    msgToVisible();
+                }
+            }
+            if (Double.parseDouble(excessTxtF.getText()) <= 0) {
+                excessTxtF.setStyle("-fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
+                excessTxtF.setStyle("-fx-background-color: rgba(198,40,40,0.2); -fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
+                isReady = false;
+                messageLab.setText(Text.MSG_MUL.get());
+                msgToVisible();
+            }
         }
         addBtn.setStyle("-fx-background-color: #464646; -fx-font-family:  fontello; -fx-font-size: 15px");
         if (courseList.isEmpty()) {
             if (!isReady)
-                messageLab.setText(Text.MSG_EMPNOC.get());
+                messageLab.setText(Text.MSG_MUL.get());
             else
                 messageLab.setText(Text.MSG_NOC.get());
             msgToVisible();
@@ -381,7 +408,6 @@ public class FXMLControllerSetting implements Initializable {
                     currBox.getDeleteBtn(),
                     currBox.getCourseBox());
             courseList.remove(currBox);
-            SettingManager.i().delPrice(currBox.getCourseTxtF().getText());
         });
     }
 
