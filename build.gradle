@@ -25,7 +25,7 @@ dependencies {
     compile "org.openjfx:javafx-graphics:11.0.2:mac"
     implementation 'com.google.code.gson:gson:2.8.5'
     compile group: 'com.jfoenix', name: 'jfoenix', version: '9.0.8'
-    
+
 }
 
 javafx {

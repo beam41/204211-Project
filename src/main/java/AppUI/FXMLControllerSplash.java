@@ -26,12 +26,12 @@ public class FXMLControllerSplash implements Initializable {
             Stage currStage = (Stage) logo.getScene().getWindow();
             SceneLoader loader = new SceneLoader();
             Stage stage = new Stage();
-            loader.Load(stage, "SetupScene.fxml", false);
+            loader.Load(stage, "setupScene.fxml", false);
             stage.setTitle("Table Manager");
             stage.setOnHidden(e2 -> Platform.exit());
             stage.initStyle(StageStyle.DECORATED);
-            currStage.close();
             stage.show();
+            currStage.close();
         });
         change.play();
     }
