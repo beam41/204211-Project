@@ -129,6 +129,10 @@ public class TableManager {
         return tableNumSet.size() == 0;
     }
 
+    public boolean tableExist(int num) {
+        return tableNumSet.contains(num);
+    }
+
     private int genId() {
         return random.nextInt() + random.nextInt() + random.nextInt();
     }

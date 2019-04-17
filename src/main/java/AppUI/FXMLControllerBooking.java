@@ -118,6 +118,11 @@ public class FXMLControllerBooking implements Initializable {
             msgToVisible();
             return;
         }
+        if (!TableManager.i().tableExist(tbNumCob.getValue())) {
+            errorLab.setText(Text.ERR_TINVALID.get());
+            msgToVisible();
+            return;
+        }
         boolean isReady = true;
         JFXTextField[] txtFList = {nameTxtF, adultTxtF, kidTxtF};
         for (JFXTextField txtF : txtFList) {

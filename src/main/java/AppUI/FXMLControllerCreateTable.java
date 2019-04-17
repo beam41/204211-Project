@@ -79,6 +79,11 @@ public class FXMLControllerCreateTable implements Initializable {
             msgToVisible();
             return;
         }
+        if (!TableManager.i().tableExist(tbNumCob.getValue())) {
+            errorLab.setText(Text.ERR_TINVALID.get());
+            msgToVisible();
+            return;
+        }
         boolean isReady = true;
         JFXTextField[] txtFList = {adultTxtF, kidTxtF};
         for (JFXTextField txtF : txtFList) {

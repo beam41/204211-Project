@@ -227,7 +227,7 @@ public class FXMLControllerMain implements Initializable {
         Animation animation = new Transition() {
 
             {
-                setCycleDuration(Duration.millis(500));
+                setCycleDuration(Duration.millis(700));
                 setInterpolator(Interpolator.EASE_IN);
             }
 

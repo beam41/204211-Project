@@ -54,7 +54,8 @@ public enum Text {
     ERR_TIMEIN("กรุณากรอกเวลาให้ถูกต้อง", "Please enter the correct time"),
     ERR_MUL("กรุณากรอกข้อมูลให้ถูกต้อง", "Please fill in the correct information"),
     ERR_TEMPTY("โต๊ะหมด", "Table Full"),
-    MSG_STOPCLOCK("(คิดเงิน)", "(Check bill)");
+    MSG_STOPCLOCK("(คิดเงิน)", "(Check bill)"),
+    ERR_TINVALID("กรุณากรอกโต๊ะให้ถูกต้อง", "Please enter the correct table");
 
     private final String THTxt;
     private final String ENTxt;
