@@ -11,7 +11,7 @@
     <children>
         <ImageView fitHeight="204.0" fitWidth="204.0" layoutX="198.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../Image/Logo.png" />
+                <Image url="@../Image/LOGOTM.png" />
             </image>
         </ImageView>
         <JFXButton fx:id="ENBtn" onMouseClicked="#ENButtonClick" style="-fx-background-color: #ff616f;" text="EN" textFill="WHITE" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="40.0" />
