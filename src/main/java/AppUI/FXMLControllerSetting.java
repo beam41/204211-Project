@@ -100,7 +100,8 @@ public class FXMLControllerSetting implements Initializable {
             "-fx-min-height: 32;" +
             "-fx-min-width: 53;" +
             "-fx-max-height: 32;" +
-            "-fx-max-width: 53;";
+            "-fx-max-width: 53;"+
+            "-fx-alignment: CENTER-RIGHT;";
 
     private String courseBoxStyle = "-fx-text-fill: -fx-primarytext;" +
             "-fx-prompt-text-fill:  #626262;" +
@@ -197,9 +198,18 @@ public class FXMLControllerSetting implements Initializable {
         for (JFXTextField txtF : txtFList) {
             txtF.setStyle("-fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
             if (txtF.getText().isEmpty()) {
-                txtF.setStyle("-fx-background-color: rgba(239, 83, 80,0.3); -fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
+                txtF.setStyle("-fx-background-color: rgba(239, 83, 80, 0.3); -fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
                 isReady = false;
                 messageLab.setText(Text.MSG_EMPTY.get());
+                msgToVisible();
+            }
+        }
+        if (!tableTxtF.getText().isEmpty()) {
+            if (Integer.parseInt(tableTxtF.getText()) < 1) {
+                tableTxtF.setStyle("-fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
+                tableTxtF.setStyle("-fx-background-color: rgba(239, 83, 80, 0.3); -fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
+                isReady = false;
+                messageLab.setText(Text.MSG_MUL.get());
                 msgToVisible();
             }
         }
@@ -208,38 +218,44 @@ public class FXMLControllerSetting implements Initializable {
             for (JFXTextField txtF : txtFList2) {
                 txtF.setStyle("-fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
                 if (txtF.getText().isEmpty()) {
-                    txtF.setStyle("-fx-background-color: rgba(198,40,40,0.2); -fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
+                    txtF.setStyle("-fx-background-color: rgba(239, 83, 80, 0.3); -fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
                     isReady = false;
                     messageLab.setText(Text.MSG_EMPTY.get());
                     msgToVisible();
                 }
             }
-            if (Integer.parseInt(thourTxtF.getText()) + Integer.parseInt(tminTxtF.getText()) + Integer.parseInt(tsecTxtF.getText()) < 1) {
-                JFXTextField[] txtFList3 = {thourTxtF, tminTxtF, tsecTxtF};
-                for (JFXTextField txtF : txtFList3) {
-                    txtF.setStyle("-fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
-                    txtF.setStyle("-fx-background-color: rgba(198,40,40,0.2); -fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
+            if (!thourTxtF.getText().isEmpty() && !tminTxtF.getText().isEmpty() && !tsecTxtF.getText().isEmpty()) {
+                if (Integer.parseInt(thourTxtF.getText()) + Integer.parseInt(tminTxtF.getText()) + Integer.parseInt(tsecTxtF.getText()) < 1) {
+                    JFXTextField[] txtFList3 = {thourTxtF, tminTxtF, tsecTxtF};
+                    for (JFXTextField txtF : txtFList3) {
+                        txtF.setStyle("-fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
+                        txtF.setStyle("-fx-background-color: rgba(239, 83, 80, 0.3); -fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
+                        isReady = false;
+                        messageLab.setText(Text.MSG_MUL.get());
+                        msgToVisible();
+                    }
+                }
+            }
+            if (!ehourTxtF.getText().isEmpty() && !eminTxtF.getText().isEmpty() && !esecTxtF.getText().isEmpty()) {
+                if (Integer.parseInt(ehourTxtF.getText()) + Integer.parseInt(eminTxtF.getText()) + Integer.parseInt(esecTxtF.getText()) < 1) {
+                    JFXTextField[] txtFList4 = {ehourTxtF, eminTxtF, esecTxtF};
+                    for (JFXTextField txtF : txtFList4) {
+                        txtF.setStyle("-fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
+                        txtF.setStyle("-fx-background-color: rgba(239, 83, 80, 0.3); -fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
+                        isReady = false;
+                        messageLab.setText(Text.MSG_MUL.get());
+                        msgToVisible();
+                    }
+                }
+            }
+            if (!excessTxtF.getText().isEmpty()) {
+                if (Double.parseDouble(excessTxtF.getText()) <= 0) {
+                    excessTxtF.setStyle("-fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
+                    excessTxtF.setStyle("-fx-background-color: rgba(239, 83, 80, 0.3); -fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
                     isReady = false;
                     messageLab.setText(Text.MSG_MUL.get());
                     msgToVisible();
                 }
-            }
-            if (Integer.parseInt(ehourTxtF.getText()) + Integer.parseInt(eminTxtF.getText()) + Integer.parseInt(esecTxtF.getText()) < 1) {
-                JFXTextField[] txtFList4 = {ehourTxtF, eminTxtF, esecTxtF};
-                for (JFXTextField txtF : txtFList4) {
-                    txtF.setStyle("-fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
-                    txtF.setStyle("-fx-background-color: rgba(198,40,40,0.2); -fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
-                    isReady = false;
-                    messageLab.setText(Text.MSG_MUL.get());
-                    msgToVisible();
-                }
-            }
-            if (Double.parseDouble(excessTxtF.getText()) <= 0) {
-                excessTxtF.setStyle("-fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
-                excessTxtF.setStyle("-fx-background-color: rgba(198,40,40,0.2); -fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
-                isReady = false;
-                messageLab.setText(Text.MSG_MUL.get());
-                msgToVisible();
             }
         }
         addBtn.setStyle("-fx-background-color: #464646; -fx-font-family:  fontello; -fx-font-size: 15px");
@@ -250,27 +266,27 @@ public class FXMLControllerSetting implements Initializable {
                 messageLab.setText(Text.MSG_NOC.get());
             msgToVisible();
             isReady = false;
-            addBtn.setStyle("-fx-background-color: rgba(198,40,40,0.5); -fx-font-family:  fontello; -fx-font-size: 15px");
+            addBtn.setStyle("-fx-background-color: rgba(239, 83, 80, 0.5); -fx-font-family:  fontello; -fx-font-size: 15px");
         }
         else {
             for (Course course : courseList) {
                 course.getCourseTxtF().setStyle(courseBoxStyle + "-fx-background-color: #393939");
                 if (course.getCourseTxtF().getText().isBlank()) {
-                    course.getCourseTxtF().setStyle(courseBoxStyle + "-fx-background-color: rgba(198,40,40,0.2)");
+                    course.getCourseTxtF().setStyle(courseBoxStyle + "-fx-background-color: rgba(239, 83, 80, 0.3)");
                     isReady = false;
                     messageLab.setText(Text.MSG_EMPTY.get());
                     msgToVisible();
                 }
                 course.getAdultTxtF().setStyle(priceBoxStyle + "-fx-background-color: #393939");
                 if (course.getAdultTxtF().getText().isEmpty()) {
-                    course.getAdultTxtF().setStyle(priceBoxStyle + "-fx-background-color: rgba(198,40,40,0.2)");
+                    course.getAdultTxtF().setStyle(priceBoxStyle + "-fx-background-color: rgba(239, 83, 80, 0.3)");
                     isReady = false;
                     messageLab.setText(Text.MSG_EMPTY.get());
                     msgToVisible();
                 }
                 course.getKidsTxtF().setStyle(priceBoxStyle + "-fx-background-color: #393939");
                 if (course.getKidsTxtF().getText().isEmpty()) {
-                    course.getKidsTxtF().setStyle(priceBoxStyle + "-fx-background-color: rgba(198,40,40,0.2)");
+                    course.getKidsTxtF().setStyle(priceBoxStyle + "-fx-background-color: rgba(239, 83, 80, 0.3)");
                     isReady = false;
                     messageLab.setText(Text.MSG_EMPTY.get());
                     msgToVisible();
@@ -454,6 +470,10 @@ public class FXMLControllerSetting implements Initializable {
         kidsTxtF.setStyle(priceBoxStyle);
         kidsTxtF.setPromptText(Text.KID.get());
         kidsTxtF.setLabelFloat(true);
+
+
+
+
 
         JFXButton deleteBtn = new JFXButton("\uE801");
         deleteBtn.setStyle("-fx-text-fill: -fx-primarytext;" +

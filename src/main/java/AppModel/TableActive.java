@@ -83,6 +83,9 @@ public class TableActive extends Table {
             else
                 TimeLab.setText(String.format(Text.ACTIVE_ELAPSED.get(), clock));
         }
+        else {
+            TimeLab.setText(Text.FINISHED.get());
+        }
     }
 
     public String getTxtTime(char mode) {

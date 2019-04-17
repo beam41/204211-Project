@@ -126,6 +126,11 @@ public class FXMLControllerCheckBill implements Initializable {
         otherFineLab.setText(Text.OTHER.get());
         totalLab.setText(Text.TOTAL.get());
         backBtn.setText(Text.BACK.get());
+        otherFineAmountTxtF.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("[\\d.]*")) {
+                otherFineAmountTxtF.setText(newValue.replaceAll("[^\\d.]", ""));
+            }
+        });
     }
 
     private void stopTimer() {

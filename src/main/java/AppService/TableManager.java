@@ -84,15 +84,19 @@ public class TableManager {
     }
 
     public void delTableActive(int id) {
-        tableNumSet.add(tableActives.get(id).getTableNum());
-        tableActives.remove(id);
-        updateFile();
+        if (tableActives.containsKey(id)) {
+            tableNumSet.add(tableActives.get(id).getTableNum());
+            tableActives.remove(id);
+            updateFile();
+        }
     }
 
     public void delTableBooking(int id) {
-        tableNumSet.add(tableBookings.get(id).getTableNum());
-        tableBookings.remove(id);
-        updateFile();
+        if (tableBookings.containsKey(id)) {
+            tableNumSet.add(tableBookings.get(id).getTableNum());
+            tableBookings.remove(id);
+            updateFile();
+        }
     }
 
     public Table findById(int id) {

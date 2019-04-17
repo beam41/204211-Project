@@ -33,6 +33,7 @@ public enum Text {
     ACTIVE_REMAIN("เหลืออีก\n%s", "%s\nremaining"),
     ACTIVE_EXCESS("เกินมา\n%s", "%s\nexcess"),
     ACTIVE_ELAPSED("ผ่านไป\n%s", "%s\nelapsed"),
+    FINISHED("คิดเงินแล้ว","Finished"),
     // Main
     MAIN("หน้าหลัก", "Home"),
     ACTIVE("กำลังใช้งาน", "Active"),

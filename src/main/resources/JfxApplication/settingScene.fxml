@@ -78,7 +78,7 @@
                         <Insets left="12.0" />
                      </GridPane.margin>
                   </JFXComboBox>
-                  <JFXTextField fx:id="tableTxtF" focusColor="#ff8d9c" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#getTableCountField" prefHeight="30.0" prefWidth="115.0" promptText="{TABLE}" style="-fx-text-fill: #ffffff; -fx-prompt-text-fill: #626262;" stylesheets="@styles.css" unFocusColor="#ff616f" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <JFXTextField fx:id="tableTxtF" alignment="CENTER_RIGHT" focusColor="#ff8d9c" labelFloat="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#getTableCountField" prefHeight="30.0" prefWidth="115.0" promptText="{TABLE}" style="-fx-text-fill: #ffffff; -fx-prompt-text-fill: #626262;" stylesheets="@styles.css" unFocusColor="#ff616f" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -89,17 +89,17 @@
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" stylesheets="@styles.css" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <children>
                         <JFXToggleButton fx:id="timitTog" layoutY="2.0" onMouseClicked="#timeLimitToggle" prefHeight="58.0" prefWidth="45.0" toggleColor="#a7343f" toggleLineColor="#ff616f" AnchorPane.leftAnchor="0.0" />
-                        <JFXTextField fx:id="thourTxtF" focusColor="#ff8d9c" labelFloat="true" layoutX="149.0" layoutY="14.0" prefHeight="30.0" prefWidth="60.0" promptText="{HOUR}" style="-fx-text-fill: #ffffff; -fx-prompt-text-fill: #626262;" unFocusColor="#ff616f">
+                        <JFXTextField fx:id="thourTxtF" alignment="CENTER_RIGHT" focusColor="#ff8d9c" labelFloat="true" layoutX="149.0" layoutY="14.0" prefHeight="30.0" prefWidth="60.0" promptText="{HOUR}" style="-fx-text-fill: #ffffff; -fx-prompt-text-fill: #626262;" unFocusColor="#ff616f">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </JFXTextField>
-                        <JFXTextField fx:id="tminTxtF" focusColor="#ff8d9c" labelFloat="true" layoutX="226.0" layoutY="14.0" prefHeight="30.0" prefWidth="60.0" promptText="{MIN}" style="-fx-text-fill: #ffffff; -fx-prompt-text-fill: #626262;" unFocusColor="#ff616f">
+                        <JFXTextField fx:id="tminTxtF" alignment="CENTER_RIGHT" focusColor="#ff8d9c" labelFloat="true" layoutX="226.0" layoutY="14.0" prefHeight="30.0" prefWidth="60.0" promptText="{MIN}" style="-fx-text-fill: #ffffff; -fx-prompt-text-fill: #626262;" unFocusColor="#ff616f">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </JFXTextField>
-                        <JFXTextField fx:id="tsecTxtF" focusColor="#ff8d9c" labelFloat="true" layoutX="305.0" layoutY="14.0" prefHeight="30.0" prefWidth="60.0" promptText="{SEC}" style="-fx-text-fill: #ffffff; -fx-prompt-text-fill: #626262;" unFocusColor="#ff616f">
+                        <JFXTextField fx:id="tsecTxtF" alignment="CENTER_RIGHT" focusColor="#ff8d9c" labelFloat="true" layoutX="305.0" layoutY="14.0" prefHeight="30.0" prefWidth="60.0" promptText="{SEC}" style="-fx-text-fill: #ffffff; -fx-prompt-text-fill: #626262;" unFocusColor="#ff616f">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -111,24 +111,24 @@
                               <Insets left="30.0" />
                            </padding>
                         </Label>
-                        <JFXTextField fx:id="ehourTxtF" focusColor="#ff8d9c" labelFloat="true" layoutX="149.0" layoutY="76.0" prefHeight="30.0" prefWidth="60.0" promptText="{HOUR}" style="-fx-text-fill: #ffffff; -fx-prompt-text-fill: #626262;" unFocusColor="#ff616f">
+                        <JFXTextField fx:id="ehourTxtF" alignment="CENTER_RIGHT" focusColor="#ff8d9c" labelFloat="true" layoutX="149.0" layoutY="76.0" prefHeight="30.0" prefWidth="60.0" promptText="{HOUR}" style="-fx-text-fill: #ffffff; -fx-prompt-text-fill: #626262;" unFocusColor="#ff616f">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </JFXTextField>
-                        <JFXTextField fx:id="eminTxtF" focusColor="#ff8d9c" labelFloat="true" layoutX="226.0" layoutY="76.0" prefHeight="30.0" prefWidth="60.0" promptText="{MIN}" style="-fx-text-fill: #ffffff; -fx-prompt-text-fill: #626262;" unFocusColor="#ff616f">
+                        <JFXTextField fx:id="eminTxtF" alignment="CENTER_RIGHT" focusColor="#ff8d9c" labelFloat="true" layoutX="226.0" layoutY="76.0" prefHeight="30.0" prefWidth="60.0" promptText="{MIN}" style="-fx-text-fill: #ffffff; -fx-prompt-text-fill: #626262;" unFocusColor="#ff616f">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </JFXTextField>
-                        <JFXTextField fx:id="esecTxtF" focusColor="#ff8d9c" labelFloat="true" layoutX="305.0" layoutY="76.0" prefHeight="30.0" prefWidth="60.0" promptText="{SEC}" style="-fx-text-fill: #ffffff; -fx-prompt-text-fill: #626262;" unFocusColor="#ff616f">
+                        <JFXTextField fx:id="esecTxtF" alignment="CENTER_RIGHT" focusColor="#ff8d9c" labelFloat="true" layoutX="305.0" layoutY="76.0" prefHeight="30.0" prefWidth="60.0" promptText="{SEC}" style="-fx-text-fill: #ffffff; -fx-prompt-text-fill: #626262;" unFocusColor="#ff616f">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </JFXTextField>
                         <Label fx:id="col3" layoutX="215.0" layoutY="80.0" prefHeight="22.0" prefWidth="9.0" text=":" textFill="#dddddd" />
                         <Label fx:id="col4" layoutX="295.0" layoutY="80.0" prefHeight="22.0" prefWidth="9.0" text=":" textFill="#dddddd" />
-                        <JFXTextField fx:id="excessTxtF" focusColor="#ff8d9c" labelFloat="true" layoutX="14.0" layoutY="76.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#getTableCountField" prefHeight="30.0" prefWidth="90.0" promptText="{EXCESSFINE}" style="-fx-text-fill: #ffffff; -fx-prompt-text-fill: #626262;" unFocusColor="#ff616f" AnchorPane.leftAnchor="12.0">
+                        <JFXTextField fx:id="excessTxtF" alignment="CENTER_RIGHT" focusColor="#ff8d9c" labelFloat="true" layoutX="14.0" layoutY="76.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#getTableCountField" prefHeight="30.0" prefWidth="90.0" promptText="{EXCESSFINE}" style="-fx-text-fill: #ffffff; -fx-prompt-text-fill: #626262;" unFocusColor="#ff616f" AnchorPane.leftAnchor="12.0">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -145,7 +145,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <JFXTextField fx:id="scTxtF" focusColor="#ff8d9c" labelFloat="true" layoutX="14.0" layoutY="34.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#getTableCountField" prefHeight="30.0" prefWidth="115.0" promptText="{SERVICECHARGE}" style="-fx-text-fill: #ffffff; -fx-prompt-text-fill: #626262;" unFocusColor="#ff616f" AnchorPane.leftAnchor="12.0">
+                        <JFXTextField fx:id="scTxtF" alignment="CENTER_RIGHT" focusColor="#ff8d9c" labelFloat="true" layoutX="14.0" layoutY="34.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#getTableCountField" prefHeight="30.0" prefWidth="115.0" promptText="{SERVICECHARGE}" style="-fx-text-fill: #ffffff; -fx-prompt-text-fill: #626262;" unFocusColor="#ff616f" AnchorPane.leftAnchor="12.0">
                            <font>
                               <Font size="14.0" />
                            </font>

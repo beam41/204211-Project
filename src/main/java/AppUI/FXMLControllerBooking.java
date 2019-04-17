@@ -128,7 +128,7 @@ public class FXMLControllerBooking implements Initializable {
         for (JFXTextField txtF : txtFList) {
             txtF.setStyle("-fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
             if (txtF.getText().isBlank()) {
-                txtF.setStyle("-fx-background-color: rgba(198,40,40,0.2); -fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
+                txtF.setStyle("-fx-background-color: rgba(239, 83, 80, 0.3); -fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
                 errorLab.setText(Text.ERR_PEMPTY.get());
                 msgToVisible();
                 isReady = false;
