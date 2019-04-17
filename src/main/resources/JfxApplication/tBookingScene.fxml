@@ -64,7 +64,7 @@
                </children>
             </VBox>
             <JFXButton fx:id="backBtn" alignment="CENTER" layoutX="21.0" layoutY="300.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#goBack" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #696969;" text="{BACK}" textFill="WHITE" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="21.0" />
-            <JFXButton fx:id="bookBtn" alignment="CENTER" layoutX="285.0" layoutY="293.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#bookClicked" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #00a856;" text="{BOOKING}" textFill="WHITE" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <JFXButton fx:id="bookBtn" alignment="CENTER" layoutX="285.0" layoutY="293.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#bookClicked" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #01a1ad;" text="{BOOKING}" textFill="WHITE" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" />
             <VBox alignment="TOP_CENTER" layoutX="275.0" layoutY="61.0" prefHeight="104.0" prefWidth="110.0">
                <children>
                   <JFXTextField fx:id="adultTxtF" alignment="CENTER_RIGHT" focusColor="#ff8d9c" maxWidth="-Infinity" prefWidth="35.0" unFocusColor="#ff616f">
@@ -94,7 +94,7 @@
                   <JFXComboBox fx:id="yearCob" prefHeight="26.0" prefWidth="80.0" styleClass="time-jfx-combo-box" stylesheets="@Com-text.css" />
                </children>
             </HBox>
-            <HBox alignment="BOTTOM_RIGHT" layoutX="151.0" layoutY="227.0" prefHeight="27.0" prefWidth="124.0" AnchorPane.rightAnchor="125.0">
+            <HBox alignment="BOTTOM_RIGHT" layoutX="150.0" layoutY="227.0" prefHeight="27.0" prefWidth="125.0" AnchorPane.rightAnchor="124.39999999999998">
                <children>
                   <JFXComboBox fx:id="hourCob" prefHeight="27.0" prefWidth="60.0" styleClass="time-jfx-combo-box" stylesheets="@Com-text.css" />
                   <Label text=":" textFill="WHITE">

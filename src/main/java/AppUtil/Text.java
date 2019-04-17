@@ -28,11 +28,11 @@ public enum Text {
     MSG_EMPNOC("กรุณากรอกข้อมูล และ ประเภทอาหาร", "Please fill in the information and course"),
     MSG_SUCCESS("บันทึกสำเร็จ", "Save Success"),
     // Table text
-    BOOK_REMAIN("เหลืออีก %s", "%s\nremaining"),
-    BOOK_EXCESS("เกินมา %s", "%s\nexcess"),
-    ACTIVE_REMAIN("เหลืออีก %s", "%s\nremaining"),
-    ACTIVE_EXCESS("เกินมา %s", "%s\nexcess"),
-    ACTIVE_ELAPSED("ผ่านไป %s", "%s\nelapsed"),
+    BOOK_REMAIN("เหลืออีก\n%s", "%s\nremaining"),
+    BOOK_EXCESS("เกินมา\n%s", "%s\nexcess"),
+    ACTIVE_REMAIN("เหลืออีก\n%s", "%s\nremaining"),
+    ACTIVE_EXCESS("เกินมา\n%s", "%s\nexcess"),
+    ACTIVE_ELAPSED("ผ่านไป\n%s", "%s\nelapsed"),
     // Main
     MAIN("หน้าหลัก", "Home"),
     ACTIVE("กำลังใช้งาน", "Active"),
@@ -52,7 +52,7 @@ public enum Text {
     END("เสร็จสิ้น", "Finish"),
     ERR_PEMPTY("กรุณากรอกข้อมูลให้ครบ", "Please fill in the information"),
     ERR_TIMEIN("กรุณากรอกเวลาให้ถูกต้อง", "Please enter the correct time"),
-    ERR_MUL("กรุณากรอกข้อมูลให้ครบ", "Please fill in the information"),
+    ERR_MUL("กรุณากรอกข้อมูลให้ถูกต้อง", "Please fill in the correct information"),
     ERR_TEMPTY("โต๊ะหมด", "Table Full"),
     MSG_STOPCLOCK("(คิดเงิน)", "(Check bill)");
 

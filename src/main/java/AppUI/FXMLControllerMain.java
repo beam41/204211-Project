@@ -63,9 +63,9 @@ public class FXMLControllerMain implements Initializable {
         activeLab.setText(Text.ACTIVE.get());
         bookLab.setText(Text.BOOKING.get());
         TableManager.i().getFile();
-        newbookBtn.setStyle(" -fx-font-family:  fontello;");
-        newtableBtn.setStyle(" -fx-font-family:  fontello;");
-        settingBtn.setStyle(" -fx-font-family:  fontello;");
+        newbookBtn.setStyle("-fx-font-family:  fontello;");
+        newtableBtn.setStyle("-fx-font-family:  fontello;");
+        settingBtn.setStyle("-fx-font-family:  fontello;");
         reloadActive();
         reloadBooked();
         spPane.widthProperty().addListener(e -> {

@@ -90,6 +90,15 @@ public class FXMLControllerCreateTable implements Initializable {
                 isReady = false;
             }
         }
+        if (Integer.valueOf(adultTxtF.getText()) + Integer.valueOf(kidTxtF.getText()) > 1) {
+            for (JFXTextField txtF : txtFList) {
+                txtF.setStyle("-fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
+                txtF.setStyle("-fx-background-color: rgba(239, 83, 80,0.3); -fx-text-fill: #fff; -fx-prompt-text-fill:  #626262");
+                errorLab.setText(Text.ERR_MUL.get());
+                msgToVisible();
+                isReady = false;
+            }
+        }
         if (isReady) {
             TableManager.i().newTableActive(tbNumCob.getValue(),
                     courseCob.getValue(),

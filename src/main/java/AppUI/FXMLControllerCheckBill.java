@@ -90,9 +90,9 @@ public class FXMLControllerCheckBill implements Initializable {
             }
             else {
                 stopNBillBtn.setText(Text.STOP.get());
-                stopNBillBtn.setStyle("-fx-background-color: #af4444");
+                stopNBillBtn.setStyle("-fx-background-color: #f65662");
                 stopNBillBtn.setOnMouseClicked(e -> stopTimer());
-                totalTimeLab.setText("pls stop clock");
+                totalTimeLab.setText(Text.MSG_STOPCLOCK.get());
                 totalTimeLab.setStyle("-fx-text-fill: #ff8a80");
                 showSCLab.setVisible(false);
                 showTotalLab.setVisible(false);
@@ -103,7 +103,7 @@ public class FXMLControllerCheckBill implements Initializable {
         }
         else {
             stopNBillBtn.setText(Text.END.get());
-            stopNBillBtn.setStyle("-fx-background-color:  #00a856");
+            stopNBillBtn.setStyle("-fx-background-color:  #01a1ad");
             stopNBillBtn.setOnMouseClicked(e -> endTable());
             fineLab.setVisible(false);
             overTimeLab.setVisible(false);
@@ -138,7 +138,7 @@ public class FXMLControllerCheckBill implements Initializable {
         showTotalLab.setText(String.format("%.2f", calFinalPrice()));
         otherFineAmountTxtF.setDisable(false);
         stopNBillBtn.setText(Text.END.get());
-        stopNBillBtn.setStyle("-fx-background-color: #00a856");
+        stopNBillBtn.setStyle("-fx-background-color: #01a1ad");
         stopNBillBtn.setOnMouseClicked(e -> endTable());
         Label[] labs = {overTimeLab, showFineLab, showSCLab, showTotalLab};
         for (Label lab: labs) {
