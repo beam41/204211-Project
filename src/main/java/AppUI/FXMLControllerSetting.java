@@ -191,7 +191,7 @@ public class FXMLControllerSetting implements Initializable {
     void saveBtnClick() {
         boolean isReady = true;
         messageLab.setText("[MessageText]");
-        messageLab.setStyle("-fx-text-fill: #e53935");
+        messageLab.setStyle("-fx-text-fill: #ff8a80");
         // region text checking
         JFXTextField[] txtFList = {tableTxtF, scTxtF};
         for (JFXTextField txtF : txtFList) {
@@ -269,7 +269,13 @@ public class FXMLControllerSetting implements Initializable {
                         Double.parseDouble(course.getAdultTxtF().getText()),
                         Double.parseDouble(course.getKidsTxtF().getText()));
             }
-            backBtn.setVisible(true);
+            if (!backBtn.isVisible()) {
+                backBtn.setVisible(true);
+                FadeTransition ft = new FadeTransition(Duration.millis(150), backBtn);
+                ft.setFromValue(0);
+                ft.setToValue(1);
+                ft.play();
+            }
             messageLab.setStyle("-fx-text-fill: #81c784");
             messageLab.setText(Text.MSG_SUCCESS.get());
             msgToVisible();
@@ -352,13 +358,31 @@ public class FXMLControllerSetting implements Initializable {
     private void delCourseTable(Course currBox) {
         ObservableList<Node> nodes = tableBox.getChildren();
 
-        nodes.removeAll(currBox.getKidsTxtF(),
-                currBox.getAdultTxtF(),
-                currBox.getCourseTxtF(),
-                currBox.getDeleteBtn(),
-                currBox.getCourseBox());
-        courseList.remove(currBox);
-        SettingManager.i().delPrice(currBox.getCourseTxtF().getText());
+        FadeTransition ft = new FadeTransition(Duration.millis(100), currBox.getKidsTxtF());
+        ft.setFromValue(1);
+        ft.setToValue(0);
+        ft.play();
+        FadeTransition ft2 = new FadeTransition(Duration.millis(100), currBox.getAdultTxtF());
+        ft2.setFromValue(1);
+        ft2.setToValue(0);
+        ft2.play();
+        FadeTransition ft3 = new FadeTransition(Duration.millis(100), currBox.getCourseTxtF());
+        ft3.setFromValue(1);
+        ft3.setToValue(0);
+        ft3.play();
+        FadeTransition ft4 = new FadeTransition(Duration.millis(100), currBox.getDeleteBtn());
+        ft4.setFromValue(1);
+        ft4.setToValue(0);
+        ft4.play();
+        ft4.setOnFinished(e -> {
+            nodes.removeAll(currBox.getKidsTxtF(),
+                    currBox.getAdultTxtF(),
+                    currBox.getCourseTxtF(),
+                    currBox.getDeleteBtn(),
+                    currBox.getCourseBox());
+            courseList.remove(currBox);
+            SettingManager.i().delPrice(currBox.getCourseTxtF().getText());
+        });
     }
 
     private void langChange() {
@@ -427,6 +451,22 @@ public class FXMLControllerSetting implements Initializable {
         HBox.setMargin(deleteBtn, new Insets(27, 0, 0, 20));
 
         nodes.addAll(courseBox);
+        FadeTransition ft = new FadeTransition(Duration.millis(100), courseTxtF);
+        ft.setFromValue(0);
+        ft.setToValue(1);
+        ft.play();
+        FadeTransition ft2 = new FadeTransition(Duration.millis(100), adultTxtF);
+        ft2.setFromValue(0);
+        ft2.setToValue(1);
+        ft2.play();
+        FadeTransition ft3 = new FadeTransition(Duration.millis(100), kidsTxtF);
+        ft3.setFromValue(0);
+        ft3.setToValue(1);
+        ft3.play();
+        FadeTransition ft4 = new FadeTransition(Duration.millis(100), deleteBtn);
+        ft4.setFromValue(0);
+        ft4.setToValue(1);
+        ft4.play();
         Course self = new Course(courseBox, courseTxtF, adultTxtF, kidsTxtF, deleteBtn);
         deleteBtn.setOnMouseClicked(e -> delCourseTable(self));
         return self;

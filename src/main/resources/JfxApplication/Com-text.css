@@ -15,3 +15,19 @@
     -fx-border-color:  transparent;
 
 }
+.Headbook-jfx-combo-box .cell {
+    -fx-text-fill: #ffffff; /* change selected text (item) color */
+    -fx-font-size:  24;
+    -fx-background-color:  #00695c; /* change background color */
+
+    -fx-border-color:  transparent;
+
+}
+.Headcreat-jfx-combo-box .cell {
+    -fx-text-fill: #ffffff; /* change selected text (item) color */
+    -fx-font-size:  24;
+    -fx-background-color:  #0277bd; /* change background color */
+
+    -fx-border-color:  transparent;
+
+}

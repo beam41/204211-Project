@@ -6,10 +6,12 @@ import AppService.TableManager;
 import AppUtil.Text;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -91,7 +93,7 @@ public class FXMLControllerCheckBill implements Initializable {
                 stopNBillBtn.setStyle("-fx-background-color: #af4444");
                 stopNBillBtn.setOnMouseClicked(e -> stopTimer());
                 totalTimeLab.setText("pls stop clock");
-                totalTimeLab.setStyle("-fx-text-fill: #e53935");
+                totalTimeLab.setStyle("-fx-text-fill: #ff8a80");
                 showSCLab.setVisible(false);
                 showTotalLab.setVisible(false);
                 overTimeLab.setVisible(false);
@@ -130,18 +132,22 @@ public class FXMLControllerCheckBill implements Initializable {
         table.setFinished();
         totalTimeLab.setText(table.getTxtTime('t'));
         totalTimeLab.setStyle("-fx-text-fill: #ffffff");
-        overTimeLab.setVisible(true);
-        showFineLab.setVisible(true);
         overTimeLab.setText(table.getTxtTime('o'));
         showFineLab.setText(String.format("%.2f", table.calExcessFine()));
-        showSCLab.setVisible(true);
         showSCLab.setText(String.format("%.2f", calSC()));
-        showTotalLab.setVisible(true);
         showTotalLab.setText(String.format("%.2f", calFinalPrice()));
         otherFineAmountTxtF.setDisable(false);
         stopNBillBtn.setText(Text.END.get());
         stopNBillBtn.setStyle("-fx-background-color: #00a856");
         stopNBillBtn.setOnMouseClicked(e -> endTable());
+        Label[] labs = {overTimeLab, showFineLab, showSCLab, showTotalLab};
+        for (Label lab: labs) {
+            lab.setVisible(true);
+            FadeTransition ft = new FadeTransition(Duration.millis(150), lab);
+            ft.setFromValue(0);
+            ft.setToValue(1);
+            ft.play();
+        }
     }
 
     private void endTable() {

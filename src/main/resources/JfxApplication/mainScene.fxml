@@ -50,7 +50,7 @@
          <left>
             <VBox fx:id="aVbox" prefHeight="490.0" prefWidth="490.0" BorderPane.alignment="CENTER">
                <children>
-                  <HBox maxHeight="-Infinity" prefHeight="50.0" prefWidth="480.0">
+                  <HBox maxHeight="-Infinity" prefHeight="50.0" prefWidth="400.0">
                      <children>
                         <Label fx:id="activeLab" prefHeight="30.0" prefWidth="140.0" text="{ACTIVE}" textFill="WHITE">
                            <font>
@@ -66,7 +66,7 @@
                         <URL value="@styles.css" />
                      </stylesheets>
                      <content>
-                        <FlowPane fx:id="activeFlow" prefHeight="1000.0" prefWidth="510.0" style="-fx-background-color: #393939; -fx-border-color: #393939;" />
+                        <FlowPane fx:id="activeFlow" prefHeight="1000.0" prefWidth="500.0" style="-fx-background-color: #393939; -fx-border-color: #393939;" />
                      </content>
                   </ScrollPane>
                </children>
@@ -88,7 +88,7 @@
                         <JFXButton fx:id="newbookBtn" onMouseClicked="#addBooking" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #82E1B1;" styleClass="booking-JFX-button" stylesheets="@mainsceneStyles.css" text="" textFill="WHITE" />
                      </children>
                   </HBox>
-                  <ScrollPane hbarPolicy="NEVER" prefHeight="463.0" prefWidth="490.0" style="-fx-background-color: #393939;" styleClass=".scroll-baractive:vertical .thumb" stylesheets="@mainsceneStyles.css">
+                  <ScrollPane hbarPolicy="NEVER" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: #393939;" styleClass=".scroll-baractive:vertical .thumb" stylesheets="@mainsceneStyles.css">
                      <content>
                         <FlowPane fx:id="bookFlow" prefHeight="1000.0" prefWidth="500.0" style="-fx-background-color: #393939; -fx-border-color: #393939;" stylesheets="@mainsceneStyles.css" />
                      </content>
