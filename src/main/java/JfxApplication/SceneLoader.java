@@ -16,7 +16,7 @@ public class SceneLoader {
 
             Scene scene = new Scene(root);
             stage.getIcons().clear();
-            stage.getIcons().add(new Image(getClass().getResourceAsStream("../Image/logotm_nHy_icon.png")));
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("logotm_nHy_icon.png")));
             stage.setResizable(resizeAble);
             stage.setScene(scene);
         }
@@ -34,7 +34,7 @@ public class SceneLoader {
             Scene scene = new Scene(root);
             scene.getStylesheets().add(getClass().getResource(styleSheet).toExternalForm());
             stage.getIcons().clear();
-            stage.getIcons().add(new Image(getClass().getResourceAsStream("../Image/logotm_nHy_icon.png")));
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("logotm_nHy_icon.png")));
             stage.setResizable(resizeAble);
             stage.setScene(scene);
         }
@@ -51,7 +51,7 @@ public class SceneLoader {
             Scene scene = new Scene(root, width, height);
             scene.getStylesheets().add(getClass().getResource(styleSheet).toExternalForm());
             stage.getIcons().clear();
-            stage.getIcons().add(new Image(getClass().getResourceAsStream("../Image/logotm_nHy_icon.png")));
+            stage.getIcons().add(new Image(getClass().getResourceAsStream("logotm_nHy_icon.png")));
             stage.setResizable(resizeAble);
             stage.setScene(scene);
         }

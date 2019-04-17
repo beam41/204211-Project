@@ -153,12 +153,16 @@ public class FXMLControllerCheckBill implements Initializable {
             ft.setToValue(1);
             ft.play();
         }
+        table.setTotalPrice(calFinalPrice());
+        table.toLog();
     }
 
     private void endTable() {
         table.setFinished();
-        table.setTotalPrice(calFinalPrice());
-        table.toLog();
+        if (!SettingManager.i().isLimitTime()) {
+            table.setTotalPrice(calFinalPrice());
+            table.toLog();
+        }
         TableManager.i().delTableActive(table.getId());
         goBack();
     }

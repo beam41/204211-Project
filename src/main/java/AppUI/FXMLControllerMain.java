@@ -71,14 +71,14 @@ public class FXMLControllerMain implements Initializable {
         spPane.widthProperty().addListener(e -> {
             double w = spPane.getWidth() - 1000;
             apPane.setPrefWidth(20 + w / 5);
-            aVbox.setMinWidth(505 + w / 2.3);
-            aVbox.setMaxWidth(500 + w / 2.3);
-            bVbox.setMinWidth(505 + w / 2.3);
-            bVbox.setMaxWidth(500 + w / 2.3);
-            activeFlow.setMinWidth(505 + w / 2.3);
-            activeFlow.setMaxWidth(500 + w / 2.3);
-            bookFlow.setMinWidth(505 + w / 2.3);
-            bookFlow.setMaxWidth(510 + w / 2.3);
+            aVbox.setMinWidth(505 + w / 2.5);
+            aVbox.setMaxWidth(500 + w / 2.5);
+            bVbox.setMinWidth(505 + w / 2.5);
+            bVbox.setMaxWidth(500 + w / 2.5);
+            activeFlow.setMinWidth(505 + w / 2.5);
+            activeFlow.setMaxWidth(500 + w / 2.5);
+            bookFlow.setMinWidth(505 + w / 2.5);
+            bookFlow.setMaxWidth(510 + w / 2.5);
         });
     }
 

@@ -141,8 +141,8 @@ public class TableActive extends Table {
                         "Course: %s%n" +
                         "Time started: %s%n" +
                         "Time finished: %s%n" +
-                        "Kid Number: %d%n" +
-                        "Adult Number: %d%n" +
+                        "Kids: %d%n" +
+                        "Adults: %d%n" +
                         "Total Price: %f%n",
                 Id,
                 TimeCreated.format(DateTimeFormatter.ofPattern("dd MMM yyyy HH:mm:ss")),
