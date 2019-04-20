@@ -116,11 +116,11 @@ public class FXMLControllerSetting implements Initializable {
 
     private ArrayList<Course> courseList = new ArrayList<>();
 
-    private static long strToSecond(String hour, String minute, String second) {
+    private long strToSecond(String hour, String minute, String second) {
         return (Long.parseLong(hour) * 3600) + (Long.parseLong(minute) * 60) + Long.parseLong(second);
     }
 
-    private static String[] secondToStr(long second) {
+    private String[] secondToStr(long second) {
         long[] time = sepTime(second);
         return new String[]{String.valueOf(time[0]), String.valueOf(time[1]), String.valueOf(time[2])};
     }
@@ -394,8 +394,7 @@ public class FXMLControllerSetting implements Initializable {
     void goBack() {
         Stage stage = (Stage) backBtn.getScene().getWindow();
 
-        SceneLoader loader = new SceneLoader();
-        loader.Load(stage, "mainScene.fxml", true, "styles.css", backBtn.getScene().getWidth(), backBtn.getScene().getHeight());
+        SceneLoader.Load(stage, "mainScene.fxml", true, "styles.css", backBtn.getScene().getWidth(), backBtn.getScene().getHeight());
     }
 
     private void delCourseTable(Course currBox) {

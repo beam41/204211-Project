@@ -87,8 +87,7 @@ public class FXMLControllerMain implements Initializable {
         Stage stage = new Stage();
         Stage currStage = (Stage) newtableBtn.getScene().getWindow();
         stage.initOwner(currStage);
-        SceneLoader loader = new SceneLoader();
-        loader.Load(stage, "tCreateTableScene.fxml", false);
+        SceneLoader.Load(stage, "tCreateTableScene.fxml", false);
         stage.setTitle("Create");
         stage.setOnHiding(e -> reloadActive());
         stage.show();
@@ -97,8 +96,7 @@ public class FXMLControllerMain implements Initializable {
     @FXML
     void toSetting() {
         Stage stage = (Stage) newtableBtn.getScene().getWindow();
-        SceneLoader loader = new SceneLoader();
-        loader.Load(stage, "settingScene.fxml", true, "styles.css", newtableBtn.getScene().getWidth(), newtableBtn.getScene().getHeight());
+        SceneLoader.Load(stage, "settingScene.fxml", true, "styles.css", newtableBtn.getScene().getWidth(), newtableBtn.getScene().getHeight());
         stage.show();
     }
 
@@ -127,9 +125,8 @@ public class FXMLControllerMain implements Initializable {
         Stage stage = new Stage();
         Stage currStage = (Stage) newtableBtn.getScene().getWindow();
         stage.initOwner(currStage);
-        SceneLoader loader = new SceneLoader();
         FXMLControllerCheckBill cont = new FXMLControllerCheckBill(id);
-        loader.Load(stage, "tCheckbillScene.fxml", false, "Com-text.css", cont);
+        SceneLoader.Load(stage, "tCheckbillScene.fxml", false, "Com-text.css", cont);
         stage.setTitle("Info");
         stage.setOnHiding(e -> reloadActive());
         stage.show();
@@ -140,8 +137,7 @@ public class FXMLControllerMain implements Initializable {
         Stage stage = new Stage();
         Stage currStage = (Stage) newbookBtn.getScene().getWindow();
         stage.initOwner(currStage);
-        SceneLoader loader = new SceneLoader();
-        loader.Load(stage, "tBookingScene.fxml", false);
+        SceneLoader.Load(stage, "tBookingScene.fxml", false);
         stage.setTitle("Booking");
         stage.setOnHiding(e -> reloadBooked());
         stage.show();
@@ -163,9 +159,8 @@ public class FXMLControllerMain implements Initializable {
         Stage stage = new Stage();
         Stage currStage = (Stage) newbookBtn.getScene().getWindow();
         stage.initOwner(currStage);
-        SceneLoader loader = new SceneLoader();
         FXMLControllerBooked cont = new FXMLControllerBooked(id);
-        loader.Load(stage, "tBookedScene.fxml", false, "Com-text.css", cont);
+        SceneLoader.Load(stage, "tBookedScene.fxml", false, "Com-text.css", cont);
         stage.setTitle("Info");
         stage.setOnHiding(e -> {
             reloadBooked();

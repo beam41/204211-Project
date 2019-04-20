@@ -15,9 +15,8 @@ public class AppLoader extends Application {
 
     @Override
     public void start(Stage stage) {
-        SceneLoader loader = new SceneLoader();
         Font.loadFont(AppLoader.class.getResource("fontello.ttf").toExternalForm(), 16.0);
-        loader.Load(stage, "SplashScene.fxml", false);
+        SceneLoader.Load(stage, "SplashScene.fxml", false);
         stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
     }

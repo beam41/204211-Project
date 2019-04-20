@@ -18,9 +18,8 @@ import java.util.ResourceBundle;
 
 public class FXMLControllerCheckBill implements Initializable {
 
-    TableActive table;
     @FXML
-    private Label courseTxtLab;
+    private Label amountLab;
     @FXML
     private Label timeLab;
     @FXML
@@ -67,6 +66,8 @@ public class FXMLControllerCheckBill implements Initializable {
     private Label tbNameLab;
     @FXML
     private Label courseLab;
+
+    TableActive table;
 
     FXMLControllerCheckBill(int id) {
         table = (TableActive) TableManager.i().findById(id);
@@ -117,7 +118,7 @@ public class FXMLControllerCheckBill implements Initializable {
         otherFineAmountTxtF.textProperty().addListener(e -> amountChange());
 
         tbLab.setText(Text.TTABLE.get());
-        courseTxtLab.setText(Text.COURSE.get());
+        amountLab.setText(Text.AMOUNT.get());
         adultLab.setText(Text.ADULT.get());
         kidLab.setText(Text.KID.get());
         timeLab.setText(Text.TIME.get());

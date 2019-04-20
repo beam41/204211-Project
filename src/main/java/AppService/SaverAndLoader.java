@@ -17,7 +17,7 @@ public class SaverAndLoader {
         return Paths.get(System.getProperty("user.dir"), "save", fileName).toString();
     }
 
-    public static void getFrom(String file) {
+    public static void settingGetFrom(String file) {
         Gson gson = new Gson();
         FileReader reader;
         try {

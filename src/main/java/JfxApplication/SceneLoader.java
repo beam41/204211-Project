@@ -10,13 +10,13 @@ import java.io.IOException;
 
 public class SceneLoader {
 
-    public void Load(Stage stage, String path, boolean resizeAble) {
+    public static void Load(Stage stage, String path, boolean resizeAble) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource(path));
+            Parent root = FXMLLoader.load(SceneLoader.class.getResource(path));
 
             Scene scene = new Scene(root);
             stage.getIcons().clear();
-            stage.getIcons().add(new Image(getClass().getResourceAsStream("logotm_nHy_icon.png")));
+            stage.getIcons().add(new Image(SceneLoader.class.getResourceAsStream("logotm_nHy_icon.png")));
             stage.setResizable(resizeAble);
             stage.setScene(scene);
         }
@@ -26,15 +26,15 @@ public class SceneLoader {
     }
 
     // for code init controller
-    public void Load(Stage stage, String path, boolean resizeAble, String styleSheet, Object controller) {
+    public static void Load(Stage stage, String path, boolean resizeAble, String styleSheet, Object controller) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
+            FXMLLoader loader = new FXMLLoader(SceneLoader.class.getResource(path));
             loader.setController(controller);
             Parent root = loader.load();
             Scene scene = new Scene(root);
-            scene.getStylesheets().add(getClass().getResource(styleSheet).toExternalForm());
+            scene.getStylesheets().add(SceneLoader.class.getResource(styleSheet).toExternalForm());
             stage.getIcons().clear();
-            stage.getIcons().add(new Image(getClass().getResourceAsStream("logotm_nHy_icon.png")));
+            stage.getIcons().add(new Image(SceneLoader.class.getResourceAsStream("logotm_nHy_icon.png")));
             stage.setResizable(resizeAble);
             stage.setScene(scene);
         }
@@ -44,14 +44,14 @@ public class SceneLoader {
     }
 
     // for preserve scene size
-    public void Load(Stage stage, String path, boolean resizeAble, String styleSheet, double width, double height) {
+    public static void Load(Stage stage, String path, boolean resizeAble, String styleSheet, double width, double height) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource(path));
+            Parent root = FXMLLoader.load(SceneLoader.class.getResource(path));
 
             Scene scene = new Scene(root, width, height);
-            scene.getStylesheets().add(getClass().getResource(styleSheet).toExternalForm());
+            scene.getStylesheets().add(SceneLoader.class.getResource(styleSheet).toExternalForm());
             stage.getIcons().clear();
-            stage.getIcons().add(new Image(getClass().getResourceAsStream("logotm_nHy_icon.png")));
+            stage.getIcons().add(new Image(SceneLoader.class.getResourceAsStream("logotm_nHy_icon.png")));
             stage.setResizable(resizeAble);
             stage.setScene(scene);
         }

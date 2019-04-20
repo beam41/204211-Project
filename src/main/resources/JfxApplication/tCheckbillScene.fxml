@@ -31,7 +31,7 @@
             <RowConstraints maxHeight="220.60001220703123" minHeight="10.0" prefHeight="83.20001220703125" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="courseTxtLab" alignment="CENTER" contentDisplay="CENTER" text="{COURSE}" textFill="WHITE" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+            <Label fx:id="amountLab" alignment="CENTER" contentDisplay="CENTER" text="{AMOUNT}" textFill="WHITE" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets left="50.0" top="5.0" />
                </GridPane.margin>

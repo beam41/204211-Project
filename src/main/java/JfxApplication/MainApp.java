@@ -19,7 +19,7 @@ public class MainApp {
             }
         }
         // endregion
-        SaverAndLoader.getFrom("settings.json");
+        SaverAndLoader.settingGetFrom("settings.json");
         Logger.i();
         AppLoader.main(args);
     }
