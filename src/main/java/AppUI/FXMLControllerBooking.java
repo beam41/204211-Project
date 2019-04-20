@@ -118,7 +118,7 @@ public class FXMLControllerBooking implements Initializable {
             msgToVisible();
             return;
         }
-        if (!TableManager.i().tableExist(tbNumCob.getValue())) {
+        if (TableManager.i().tableNotExist(tbNumCob.getValue())) {
             errorLab.setText(Text.ERR_TINVALID.get());
             msgToVisible();
             return;

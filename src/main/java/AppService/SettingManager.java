@@ -117,11 +117,6 @@ public class SettingManager {
         updateFile();
     }
 
-    public void delPrice(String name) {
-        PriceMap.remove(byteNameConc(byteName(name)));
-        updateFile();
-    }
-
     public void clearPrice() {
         PriceMap.clear();
         updateFile();
