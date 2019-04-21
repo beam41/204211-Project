@@ -1,7 +1,6 @@
 package AppUI;
 
 import AppModel.Course;
-import AppModel.Price;
 import AppService.SettingManager;
 import AppService.TableManager;
 import AppUtil.Lang;
@@ -25,7 +24,6 @@ import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Map;
 import java.util.ResourceBundle;
 
 import static AppUtil.Converter.sepTime;
@@ -100,7 +98,7 @@ public class FXMLControllerSetting implements Initializable {
             "-fx-min-height: 32;" +
             "-fx-min-width: 53;" +
             "-fx-max-height: 32;" +
-            "-fx-max-width: 53;"+
+            "-fx-max-width: 53;" +
             "-fx-alignment: CENTER-RIGHT;";
 
     private String courseBoxStyle = "-fx-text-fill: -fx-primarytext;" +
@@ -165,11 +163,11 @@ public class FXMLControllerSetting implements Initializable {
         timeLimitToggle();
         if (SettingManager.i().getServiceCharge() != -1)
             scTxtF.setText(String.valueOf(SettingManager.i().getServiceCharge()));
-        for (Map.Entry<String, Price> pm : SettingManager.i().getPriceMap().entrySet()) {
+        for (String pn : SettingManager.i().getPriceNameArr()) {
             Course newCourse = addCourseTable();
-            newCourse.getCourseTxtF().setText(pm.getValue().getName());
-            newCourse.getAdultTxtF().setText(String.valueOf(pm.getValue().getPriceAdult()));
-            newCourse.getKidsTxtF().setText(String.valueOf(pm.getValue().getPriceKids()));
+            newCourse.getCourseTxtF().setText(pn);
+            newCourse.getAdultTxtF().setText(String.valueOf(SettingManager.i().getPriceAdult(pn)));
+            newCourse.getKidsTxtF().setText(String.valueOf(SettingManager.i().getPriceKids(pn)));
         }
         // endregion
 
@@ -469,9 +467,6 @@ public class FXMLControllerSetting implements Initializable {
         kidsTxtF.setStyle(priceBoxStyle);
         kidsTxtF.setPromptText(Text.KID.get());
         kidsTxtF.setLabelFloat(true);
-
-
-
 
 
         JFXButton deleteBtn = new JFXButton("\uE801");

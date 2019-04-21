@@ -30,10 +30,6 @@ public class TableBooking extends Table {
         return strFromByte(customerName);
     }
 
-    public TableActive toActive() {
-        return new TableActive(Id, TableNum, Course, KidNumber, AdultNumber);
-    }
-
     public long getTime() {
         return LocalDateTime.now().until(TimeCheckin, SECONDS);
     }

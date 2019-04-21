@@ -1,8 +1,5 @@
 package AppUI;
 
-import AppModel.Table;
-import AppModel.TableActive;
-import AppModel.TableBooking;
 import AppService.TableManager;
 import AppUtil.Text;
 import JfxApplication.SceneLoader;
@@ -27,7 +24,6 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.net.URL;
-import java.util.Map;
 import java.util.ResourceBundle;
 
 
@@ -88,7 +84,7 @@ public class FXMLControllerMain implements Initializable {
         Stage currStage = (Stage) newtableBtn.getScene().getWindow();
         stage.initOwner(currStage);
         SceneLoader.Load(stage, "tCreateTableScene.fxml", false);
-        stage.setTitle("Create");
+        stage.setTitle("Table Manager");
         stage.setOnHiding(e -> reloadActive());
         stage.show();
     }
@@ -103,8 +99,8 @@ public class FXMLControllerMain implements Initializable {
     private void reloadActive() {
         activeFlow.getChildren().clear();
         int i = 0;
-        for (Map.Entry<Integer, TableActive> table : TableManager.i().getTableActives().entrySet()) {
-            createActiveTable(table.getKey(), i);
+        for (int table : TableManager.i().getTableActivesNum()) {
+            createActiveTable(table, i);
             i++;
         }
     }
@@ -127,7 +123,7 @@ public class FXMLControllerMain implements Initializable {
         stage.initOwner(currStage);
         FXMLControllerCheckBill cont = new FXMLControllerCheckBill(id);
         SceneLoader.Load(stage, "tCheckbillScene.fxml", false, "Com-text.css", cont);
-        stage.setTitle("Info");
+        stage.setTitle("Table Manager");
         stage.setOnHiding(e -> reloadActive());
         stage.show();
     }
@@ -138,7 +134,7 @@ public class FXMLControllerMain implements Initializable {
         Stage currStage = (Stage) newbookBtn.getScene().getWindow();
         stage.initOwner(currStage);
         SceneLoader.Load(stage, "tBookingScene.fxml", false);
-        stage.setTitle("Booking");
+        stage.setTitle("Table Manager");
         stage.setOnHiding(e -> reloadBooked());
         stage.show();
     }
@@ -161,7 +157,7 @@ public class FXMLControllerMain implements Initializable {
         stage.initOwner(currStage);
         FXMLControllerBooked cont = new FXMLControllerBooked(id);
         SceneLoader.Load(stage, "tBookedScene.fxml", false, "Com-text.css", cont);
-        stage.setTitle("Info");
+        stage.setTitle("Table Manager");
         stage.setOnHiding(e -> {
             reloadBooked();
             reloadActive();
@@ -172,8 +168,8 @@ public class FXMLControllerMain implements Initializable {
     private void reloadBooked() {
         bookFlow.getChildren().clear();
         int i = 0;
-        for (Map.Entry<Integer, TableBooking> table : TableManager.i().getTableBookings().entrySet()) {
-            createBookTable(table.getKey(), i);
+        for (int table : TableManager.i().getTableBookingsNum()) {
+            createBookTable(table, i);
             i++;
         }
     }
@@ -193,8 +189,7 @@ public class FXMLControllerMain implements Initializable {
         catch (Exception e) {
             timeSpLab = new Label();
         }
-        Table tab = TableManager.i().findById(id);
-        tab.setTimeLab(timeSpLab);
+        TableManager.i().findById(id).setTimeLab(timeSpLab);
         timeSpLab.setStyle("-fx-font-size: 10px;" +
                 "-fx-text-fill: #ffffff;" +
                 "-fx-text-alignment: center");
@@ -210,7 +205,7 @@ public class FXMLControllerMain implements Initializable {
         tableBtn.setPrefSize(80, 80);
         tableBtn.setAlignment(Pos.CENTER_LEFT);
         tableBtn.setText("");
-        if (tab.getTime() < 0) {
+        if (TableManager.i().findById(id).getTime() < 0) {
             Color vColor = new Color(198.0 / 255.0, 40.0 / 255.0, 40.0 / 255.0, 1);
             tableBtn.setStyle("-fx-background-color:" + mixRGB(Color.web(btnColor), vColor));
         }
@@ -233,10 +228,10 @@ public class FXMLControllerMain implements Initializable {
             }
         };
         timeSpLab.textProperty().addListener(e -> {
-            if (tab.getTime() == 0) {
+            if (TableManager.i().findById(id).getTime() == 0) {
                 animation.play();
             }
-            else if (tab.getTime() < 0) {
+            else if (TableManager.i().findById(id).getTime() < 0) {
                 Color vColor = new Color(198.0 / 255.0, 40.0 / 255.0, 40.0 / 255.0, 1);
                 tableBtn.setStyle("-fx-background-color:" + mixRGB(Color.web(btnColor), vColor));
             }

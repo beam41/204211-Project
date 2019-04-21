@@ -113,16 +113,28 @@ public class TableManager {
     public void startTable(int id) {
         TableBooking table = tableBookings.get(id);
         tableBookings.remove(id);
-        tableActives.put(table.getId(), table.toActive());
+        tableActives.put(table.getId(), new TableActive(table.getId(),
+                table.getTableNum(),
+                table.getCourse(),
+                table.getKidNumber(),
+                table.getAdultNumber()));
         updateFile();
     }
 
-    public LinkedHashMap<Integer, TableActive> getTableActives() {
-        return tableActives;
+    public ArrayList<Integer> getTableActivesNum() {
+        ArrayList<Integer> arr = new ArrayList<>();
+        for (Map.Entry<Integer, TableActive> k: tableActives.entrySet()) {
+            arr.add(k.getKey());
+        }
+        return arr;
     }
 
-    public LinkedHashMap<Integer, TableBooking> getTableBookings() {
-        return tableBookings;
+    public ArrayList<Integer> getTableBookingsNum() {
+        ArrayList<Integer> arr = new ArrayList<>();
+        for (Map.Entry<Integer, TableBooking> k: tableBookings.entrySet()) {
+            arr.add(k.getKey());
+        }
+        return arr;
     }
 
     public TreeSet<Integer> getTableNumSet() {

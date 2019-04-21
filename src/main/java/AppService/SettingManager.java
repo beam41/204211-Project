@@ -3,7 +3,9 @@ package AppService;
 import AppModel.Price;
 import AppUtil.Lang;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 import static AppUtil.Converter.byteName;
 import static AppUtil.Converter.byteNameConc;
@@ -99,8 +101,20 @@ public class SettingManager {
         LimitTime = limitTime;
     }
 
-    public LinkedHashMap<String, Price> getPriceMap() {
-        return PriceMap;
+    public ArrayList<String> getPriceNameArr() {
+        ArrayList<String> arr = new ArrayList<>();
+        for (Map.Entry<String, Price> p: PriceMap.entrySet()) {
+            arr.add(p.getValue().getName());
+        }
+        return arr;
+    }
+
+    public double getPriceAdult(String name) {
+        return PriceMap.get(byteNameConc(byteName(name))).getPriceAdult();
+    }
+
+    public double getPriceKids(String name) {
+        return PriceMap.get(byteNameConc(byteName(name))).getPriceKids();
     }
 
     public double getPriceAdult(byte[] name) {

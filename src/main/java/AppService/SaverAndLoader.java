@@ -5,13 +5,24 @@ import AppModel.TableBooking;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Paths;
 
 public class SaverAndLoader {
+
+    public static void init() {
+        File directory = new File(getFile(""));
+        if (!directory.exists()) {
+            if (directory.mkdirs()) {
+                saveTo(SettingManager.i(), "settings.json");
+                saveTo(new int[]{}, "tableActives.json");
+                saveTo(new int[]{}, "tableBookings.json");
+            }
+        }
+        // endregion
+        settingGetFrom("settings.json");
+        Logger.i();
+    }
 
     public static String getFile(String fileName) {
         return Paths.get(System.getProperty("user.dir"), "save", fileName).toString();

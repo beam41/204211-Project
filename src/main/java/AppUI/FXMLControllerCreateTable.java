@@ -1,6 +1,5 @@
 package AppUI;
 
-import AppModel.Price;
 import AppService.SettingManager;
 import AppService.TableManager;
 import AppUtil.Text;
@@ -15,7 +14,6 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.net.URL;
-import java.util.Map;
 import java.util.ResourceBundle;
 
 public class FXMLControllerCreateTable implements Initializable {
@@ -58,8 +56,8 @@ public class FXMLControllerCreateTable implements Initializable {
                 }
             });
         }
-        for (Map.Entry<String, Price> pm : SettingManager.i().getPriceMap().entrySet()) {
-            courseCob.getItems().add(pm.getValue().getName());
+        for (String pn : SettingManager.i().getPriceNameArr()) {
+            courseCob.getItems().add(pn);
         }
         courseCob.getSelectionModel().selectFirst();
         tbLab.setText(Text.TTABLE.get());

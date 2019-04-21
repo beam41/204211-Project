@@ -5,7 +5,7 @@ plugins {
 }
 
 group 'proj.TableManager'
-version '0.117'
+version '0.119'
 
 sourceCompatibility = 11
 

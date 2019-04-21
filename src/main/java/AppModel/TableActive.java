@@ -18,16 +18,6 @@ public class TableActive extends Table {
     private boolean Finished = false;
     private double TotalPrice;
 
-    TableActive(int id, int tableNum, byte[] course, int kidsNumber, int adultNumber) {
-        Id = id;
-        TableNum = tableNum;
-        Course = course;
-        KidNumber = kidsNumber;
-        AdultNumber = adultNumber;
-        TimeCreated = LocalDateTime.now();
-        TimeStarted = LocalDateTime.now();
-    }
-
     public TableActive(int id, int tableNum, String course, int kidsNumber, int adultNumber) {
         Id = id;
         TableNum = tableNum;
